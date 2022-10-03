@@ -1,0 +1,20 @@
+[package]
+name = "ida_autocxx"
+version = "0.1.0"
+edition = "2021"
+links = "ida"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+name = "1_hello_plugin64"
+path = "src/lib.rs"
+crate-type = ["cdylib"]
+
+[dependencies]
+autocxx = "0.22.4"
+cxx = "1.0"
+libc = "0.2"
+
+[build-dependencies]
+autocxx-build = "0.22.4"
+miette = { version="4.3", features=["fancy"] } # optional but gives nicer error messages!
